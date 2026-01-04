@@ -168,6 +168,35 @@ class VerityClient:
 
         return await self._request("GET", "/policies/compare", params=params)
 
+    async def get_policy_changes(
+        self,
+        since: Optional[str] = None,
+        policy_id: Optional[str] = None,
+        change_type: Optional[str] = None,
+        limit: int = 20,
+    ) -> dict:
+        """
+        Track recent changes to Medicare coverage policies.
+
+        Args:
+            since: ISO8601 timestamp - only changes after this date
+            policy_id: Filter to a specific policy
+            change_type: Filter by type (created, updated, retired, codes_changed, criteria_changed)
+            limit: Results per page (max 100)
+
+        Returns:
+            List of policy changes with details
+        """
+        params = {"limit": limit}
+        if since:
+            params["since"] = since
+        if policy_id:
+            params["policy_id"] = policy_id
+        if change_type:
+            params["change_type"] = change_type
+
+        return await self._request("GET", "/policies/changes", params=params)
+
 
 class VerityAPIError(Exception):
     """Exception for Verity API errors."""

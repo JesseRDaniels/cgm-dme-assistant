@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     chunk_overlap: int = 50
 
     class Config:
-        env_file = ".env"
+        env_file = "../.env"  # Project root .env
         env_file_encoding = "utf-8"
         extra = "ignore"  # Ignore extra env vars from Railway
 
