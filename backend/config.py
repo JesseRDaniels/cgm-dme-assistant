@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     # API Keys
     anthropic_api_key: str = ""
-    openai_api_key: str = ""
+    voyage_api_key: str = ""  # For embeddings (Voyage AI)
 
     # Pinecone
     pinecone_api_key: str = ""
@@ -20,9 +20,9 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     # LLM Settings
-    claude_model: str = "claude-3-5-sonnet-20241022"
-    embedding_model: str = "text-embedding-3-small"
-    embedding_dimensions: int = 1536
+    claude_model: str = "claude-sonnet-4-20250514"
+    embedding_model: str = "voyage-3-lite"
+    embedding_dimensions: int = 512  # voyage-3-lite uses 512
 
     # RAG Settings
     retrieval_top_k: int = 5

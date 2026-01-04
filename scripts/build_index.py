@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 """
-Build Pinecone index from processed chunks.
+Build Pinecone index from processed chunks using Voyage embeddings.
 """
 import json
-import asyncio
+import time
 from pathlib import Path
 import sys
-
-# Add backend to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent / "backend"))
+import httpx
 
 from pinecone import Pinecone, ServerlessSpec
-from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
@@ -22,20 +19,31 @@ CHUNKS_FILE = Path(__file__).parent.parent / "data" / "chunks" / "all_chunks.jso
 
 # Configuration
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
 INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "cgm-dme")
-EMBEDDING_MODEL = "text-embedding-3-small"
-EMBEDDING_DIMENSIONS = 1536
-BATCH_SIZE = 100
+EMBEDDING_MODEL = "voyage-3-lite"
+EMBEDDING_DIMENSIONS = 512  # voyage-3-lite uses 512 dimensions
+BATCH_SIZE = 50  # Voyage supports up to 128
 
 
-def get_embeddings(texts: list[str], client: OpenAI) -> list[list[float]]:
-    """Get embeddings for a batch of texts."""
-    response = client.embeddings.create(
-        model=EMBEDDING_MODEL,
-        input=texts,
+def get_embeddings(texts: list[str]) -> list[list[float]]:
+    """Get embeddings using Voyage AI."""
+    response = httpx.post(
+        "https://api.voyageai.com/v1/embeddings",
+        headers={
+            "Authorization": f"Bearer {VOYAGE_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "model": EMBEDDING_MODEL,
+            "input": texts,
+            "input_type": "document",
+        },
+        timeout=60,
     )
-    return [item.embedding for item in response.data]
+    response.raise_for_status()
+    data = response.json()
+    return [item["embedding"] for item in data["data"]]
 
 
 def main():
@@ -44,8 +52,8 @@ def main():
         print("Error: PINECONE_API_KEY not set in .env")
         return
 
-    if not OPENAI_API_KEY:
-        print("Error: OPENAI_API_KEY not set in .env")
+    if not VOYAGE_API_KEY:
+        print("Error: VOYAGE_API_KEY not set in .env")
         return
 
     if not CHUNKS_FILE.exists():
@@ -59,9 +67,8 @@ def main():
 
     print(f"Loaded {len(chunks)} chunks")
 
-    # Initialize clients
+    # Initialize Pinecone
     pc = Pinecone(api_key=PINECONE_API_KEY)
-    openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
     # Check/create index
     existing_indexes = [idx.name for idx in pc.list_indexes()]
@@ -69,7 +76,6 @@ def main():
     if INDEX_NAME in existing_indexes:
         print(f"Index '{INDEX_NAME}' exists. Deleting and recreating...")
         pc.delete_index(INDEX_NAME)
-        import time
         time.sleep(5)  # Wait for deletion
 
     print(f"Creating index '{INDEX_NAME}'...")
@@ -81,7 +87,6 @@ def main():
     )
 
     # Wait for index to be ready
-    import time
     while True:
         desc = pc.describe_index(INDEX_NAME)
         if desc.status.ready:
@@ -102,11 +107,17 @@ def main():
     # Process and upsert in batches
     for i in range(0, len(chunks), BATCH_SIZE):
         batch = chunks[i:i + BATCH_SIZE]
-        print(f"Processing batch {i // BATCH_SIZE + 1}/{(len(chunks) + BATCH_SIZE - 1) // BATCH_SIZE}...")
+        batch_num = i // BATCH_SIZE + 1
+        total_batches = (len(chunks) + BATCH_SIZE - 1) // BATCH_SIZE
+        print(f"Processing batch {batch_num}/{total_batches}...")
 
         # Get embeddings
         texts = [chunk["text"] for chunk in batch]
-        embeddings = get_embeddings(texts, openai_client)
+        try:
+            embeddings = get_embeddings(texts)
+        except Exception as e:
+            print(f"Error getting embeddings: {e}")
+            continue
 
         # Prepare vectors grouped by namespace
         namespace_vectors = {}
@@ -130,6 +141,9 @@ def main():
         for namespace, vectors in namespace_vectors.items():
             index.upsert(vectors=vectors, namespace=namespace)
             print(f"  Upserted {len(vectors)} vectors to namespace '{namespace}'")
+
+        # Small delay to avoid rate limits
+        time.sleep(0.5)
 
     # Print index stats
     stats = index.describe_index_stats()

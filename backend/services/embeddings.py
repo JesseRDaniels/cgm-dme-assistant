@@ -1,5 +1,5 @@
-"""Embedding service using OpenAI."""
-from openai import AsyncOpenAI
+"""Embedding service using Voyage AI (Anthropic's embedding model)."""
+import httpx
 from typing import Optional
 import logging
 
@@ -7,53 +7,95 @@ from config import get_settings
 
 logger = logging.getLogger(__name__)
 
-_client: Optional[AsyncOpenAI] = None
-
-
-def get_client() -> AsyncOpenAI:
-    """Get or create OpenAI client."""
-    global _client
-    if _client is None:
-        settings = get_settings()
-        _client = AsyncOpenAI(api_key=settings.openai_api_key)
-    return _client
+VOYAGE_API_URL = "https://api.voyageai.com/v1/embeddings"
 
 
 async def get_embedding(text: str) -> list[float]:
     """
-    Get embedding for a single text.
+    Get embedding for a single text using Voyage AI.
 
-    Uses OpenAI text-embedding-3-small model.
+    Uses voyage-3-lite model (1024 dimensions).
     """
     settings = get_settings()
-    client = get_client()
 
-    try:
-        response = await client.embeddings.create(
-            model=settings.embedding_model,
-            input=text,
-        )
-        return response.data[0].embedding
-    except Exception as e:
-        logger.error(f"Embedding failed: {e}")
-        raise
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post(
+                VOYAGE_API_URL,
+                headers={
+                    "Authorization": f"Bearer {settings.voyage_api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": settings.embedding_model,
+                    "input": text,
+                    "input_type": "document",
+                },
+                timeout=30,
+            )
+            response.raise_for_status()
+            data = response.json()
+            return data["data"][0]["embedding"]
+        except Exception as e:
+            logger.error(f"Embedding failed: {e}")
+            raise
 
 
 async def get_embeddings(texts: list[str]) -> list[list[float]]:
     """
     Get embeddings for multiple texts.
 
-    Batches requests for efficiency.
+    Voyage supports batch embedding up to 128 texts.
     """
     settings = get_settings()
-    client = get_client()
 
-    try:
-        response = await client.embeddings.create(
-            model=settings.embedding_model,
-            input=texts,
-        )
-        return [item.embedding for item in response.data]
-    except Exception as e:
-        logger.error(f"Batch embedding failed: {e}")
-        raise
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post(
+                VOYAGE_API_URL,
+                headers={
+                    "Authorization": f"Bearer {settings.voyage_api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": settings.embedding_model,
+                    "input": texts,
+                    "input_type": "document",
+                },
+                timeout=60,
+            )
+            response.raise_for_status()
+            data = response.json()
+            return [item["embedding"] for item in data["data"]]
+        except Exception as e:
+            logger.error(f"Batch embedding failed: {e}")
+            raise
+
+
+async def get_query_embedding(text: str) -> list[float]:
+    """
+    Get embedding for a query (uses input_type='query' for better retrieval).
+    """
+    settings = get_settings()
+
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post(
+                VOYAGE_API_URL,
+                headers={
+                    "Authorization": f"Bearer {settings.voyage_api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": settings.embedding_model,
+                    "input": text,
+                    "input_type": "query",
+                },
+                timeout=30,
+            )
+            response.raise_for_status()
+            data = response.json()
+            return data["data"][0]["embedding"]
+        except Exception as e:
+            logger.error(f"Query embedding failed: {e}")
+            raise
