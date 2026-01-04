@@ -1,21 +1,21 @@
 # CGM DME Assistant - Project Instructions
 
 ## Current Status (Jan 4, 2026)
-- Backend: Built with Verity API integration, tested locally
-- Frontend: Built, not deployed
-- Pinecone: **14 vectors indexed** (LCD policies, HCPCS codes, denial reasons)
-- Verity API: **Integrated** into backend (codes, prior-auth, audit routers)
-- Verity MCP: **Configured** with working API key
+- **Backend**: Deployed to Railway
+- **Frontend**: Deployed to Railway
+- **Pinecone**: 14 vectors indexed (LCD policies, HCPCS codes, denial reasons)
+- **Verity API**: Integrated into backend (codes, prior-auth, audit routers)
 
-## Next Steps
-1. **Deploy backend to Railway** - create project, set env vars, deploy
-2. **Deploy frontend** - Vercel or Railway static
-3. **Test end-to-end** - verify all endpoints work in production
+## Production URLs
+| Service | URL |
+|---------|-----|
+| Frontend | https://secure-benevolence-production.up.railway.app |
+| Backend | https://cgm-dme-assistant-production.up.railway.app |
 
 ## Tech Stack
 - Backend: FastAPI + Python 3.11+
 - Vector DB: Pinecone (serverless, 512 dimensions, index: `cgm-dme`)
-- LLM: Claude 3.5 Sonnet (claude-sonnet-4-20250514)
+- LLM: Claude Sonnet (claude-sonnet-4-20250514)
 - Embeddings: Voyage AI (voyage-3-lite)
 - Coverage API: Verity Healthcare API
 - Frontend: React + Vite + Tailwind CSS v4
@@ -32,13 +32,6 @@ Key files:
 - `backend/routers/prior_auth.py` - Prior auth with Verity
 - `backend/routers/audit.py` - Claim audit with Verity enrichment
 
-## MCP Integration (for development)
-- **Verity MCP**: Configured with working API key in Claude Code
-  - `mcp__verity__lookup_code("A9276")` - Code coverage info
-  - `mcp__verity__search_policies("CGM")` - Search LCDs/NCDs
-  - `mcp__verity__get_policy("L33822")` - Full LCD details
-  - `mcp__verity__check_prior_auth(["A9276"])` - Prior auth requirements
-
 ## Pinecone Index Contents
 - **lcd_policies** (4 vectors): L33822 coverage, codes, documentation, denials
 - **hcpcs_codes** (5 vectors): A9276, A9277, A9278, K0553, K0554
@@ -53,7 +46,7 @@ Key files:
 - `backend/services/rag.py` - Core RAG pipeline
 - `backend/services/llm.py` - Claude integration
 - `frontend/src/App.jsx` - React app with tabs
-- `data/chunks/all_chunks.json` - Knowledge base chunks (14 total)
+- `frontend/src/api.js` - API client (uses VITE_API_URL env var)
 
 ## Domain Knowledge
 - LCD L33822: CGM coverage criteria
@@ -62,6 +55,7 @@ Key files:
 - Valid diabetes DX: E10.x, E11.x, E13.x, O24.x
 
 ## API Endpoints
+- `GET /health` - Health check
 - `POST /api/chat` - RAG chat
 - `POST /api/audit/claim` - Full claim validation (Verity-enriched)
 - `POST /api/audit/quick` - Quick code check (Verity-enriched)
@@ -83,21 +77,22 @@ cd frontend && npm run dev
 ```
 
 ## Environment Variables
+
+### Backend (Railway)
 ```
 ANTHROPIC_API_KEY=sk-ant-...
 PINECONE_API_KEY=pcsk_...
 VOYAGE_API_KEY=pa-...
-VERITY_API_KEY=vrt_live_ruzkWh-LGh5VepXYnK72xZRiF2VIjfX-NoS-8zQXH84_b3e9
+VERITY_API_KEY=vrt_live_...
 ```
 
-## Deployment (Railway)
-```bash
-# Backend
-cd ~/cgm-dme-assistant
-railway login
-railway init  # or railway link
-railway up
-
-# Set env vars (including new VERITY_API_KEY)
-railway variables set ANTHROPIC_API_KEY=... PINECONE_API_KEY=... VOYAGE_API_KEY=... VERITY_API_KEY=...
+### Frontend (Railway)
 ```
+VITE_API_URL=https://cgm-dme-assistant-production.up.railway.app
+```
+
+## Railway Services
+- **cgm-dme-assistant** - Backend (root: `backend/`)
+- **secure-benevolence** - Frontend (root: `frontend/`)
+
+Both auto-deploy from GitHub on push to main.
