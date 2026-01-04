@@ -64,7 +64,7 @@ function App() {
       <footer className="bg-white border-t border-gray-200 py-3 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-sm text-gray-500">
           <span>CGM DME Assistant v0.1</span>
-          <span>API: localhost:8001</span>
+          <span>API: {import.meta.env.VITE_API_URL || 'localhost:8001'}</span>
         </div>
       </footer>
     </div>

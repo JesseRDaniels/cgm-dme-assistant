@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8001';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8001';
 
 export async function chat(query, context = null) {
   const response = await fetch(`${API_BASE}/api/chat`, {
