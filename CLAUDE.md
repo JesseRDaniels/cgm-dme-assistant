@@ -64,6 +64,9 @@ Key files:
 - `POST /api/generate/prior-auth` - Generate prior auth letter
 - `POST /api/generate/dwo` - Generate detailed written order
 - `GET /api/codes/{code}` - HCPCS lookup via Verity
+- `GET /api/policies/{policy_id}` - Full policy detail with criteria/codes
+- `GET /api/policies/compare/jurisdictions?codes=...` - Compare coverage across MACs
+- `GET /api/policies/changes/recent` - Track recent policy updates
 
 ## Running Locally
 ```bash
