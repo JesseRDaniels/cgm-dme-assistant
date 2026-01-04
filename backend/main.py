@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import chat, batch, generate, codes, audit
+from routers import chat, batch, generate, codes, audit, prior_auth
 from services.pinecone_client import init_pinecone
 
 
@@ -36,6 +36,7 @@ app.include_router(batch.router, prefix="/api/batch", tags=["Batch Processing"])
 app.include_router(generate.router, prefix="/api/generate", tags=["Document Generation"])
 app.include_router(codes.router, prefix="/api/codes", tags=["Code Lookup"])
 app.include_router(audit.router, prefix="/api/audit", tags=["Claim Audit"])
+app.include_router(prior_auth.router, prefix="/api/prior-auth", tags=["Prior Authorization"])
 
 
 @app.get("/health")

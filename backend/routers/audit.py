@@ -1,10 +1,14 @@
-"""Claim auditing and validation endpoints."""
+"""Claim auditing and validation endpoints with Verity integration."""
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
+import logging
+
+from services.verity import get_verity_client, VerityAPIError
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 
 class ClaimAuditRequest(BaseModel):
@@ -20,6 +24,8 @@ class ClaimAuditRequest(BaseModel):
     has_medical_necessity: bool = False
     insulin_therapy: Optional[str] = None  # "pump", "mdi" (multiple daily injections), "none"
     a1c_documented: bool = False
+    # Verity enrichment
+    enrich_with_verity: bool = True  # Fetch real-time policy data from Verity
 
 
 class AuditIssue(BaseModel):
@@ -30,6 +36,14 @@ class AuditIssue(BaseModel):
     recommendation: str
 
 
+class VerityPolicyInfo(BaseModel):
+    """Policy info from Verity API."""
+    policy_id: str
+    title: str
+    policy_type: str
+    disposition: Optional[str] = None
+
+
 class ClaimAuditResponse(BaseModel):
     """Audit results."""
     passed: bool
@@ -37,6 +51,10 @@ class ClaimAuditResponse(BaseModel):
     issues: list[AuditIssue]
     lcd_reference: str
     summary: str
+    # Verity enrichment data
+    verity_enriched: bool = False
+    verity_policies: Optional[list[VerityPolicyInfo]] = None
+    code_description: Optional[str] = None
 
 
 # CGM HCPCS validation rules
@@ -58,7 +76,7 @@ VALID_DIABETES_DX = [
     "O24",  # Gestational diabetes
 ]
 
-# LCD L33822 requirements
+# LCD L33822 requirements (fallback if Verity unavailable)
 LCD_REQUIREMENTS = {
     "diagnosis": "Documented diagnosis of diabetes (Type 1, Type 2, or gestational)",
     "face_to_face": "Face-to-face encounter within 6 months prior to order",
@@ -66,6 +84,33 @@ LCD_REQUIREMENTS = {
     "medical_necessity": "Medical necessity documentation supporting CGM use",
     "insulin_or_hypoglycemia": "Intensive insulin therapy (3+ injections/day or pump) OR documented problematic hypoglycemia",
 }
+
+
+async def fetch_verity_code_info(code: str) -> dict | None:
+    """Fetch code info from Verity API for enhanced validation."""
+    try:
+        client = get_verity_client()
+        data = await client.lookup_code(code=code, include_policies=True)
+        if data.get("found"):
+            return data
+    except VerityAPIError as e:
+        logger.warning(f"Verity API error for code {code}: {e.message}")
+    except Exception as e:
+        logger.warning(f"Failed to fetch Verity data for {code}: {e}")
+    return None
+
+
+async def fetch_verity_policy(policy_id: str) -> dict | None:
+    """Fetch policy details from Verity API."""
+    try:
+        client = get_verity_client()
+        data = await client.get_policy(policy_id=policy_id, include_criteria=True)
+        return data
+    except VerityAPIError as e:
+        logger.warning(f"Verity API error for policy {policy_id}: {e.message}")
+    except Exception as e:
+        logger.warning(f"Failed to fetch Verity policy {policy_id}: {e}")
+    return None
 
 
 def validate_hcpcs(code: str) -> list[AuditIssue]:
@@ -212,8 +257,42 @@ async def audit_claim(request: ClaimAuditRequest):
     - Diagnosis code coverage
     - Documentation requirements (LCD L33822)
     - Bundling rules
+
+    Optionally enriches with real-time Verity API data.
     """
     all_issues = []
+    verity_enriched = False
+    verity_policies = None
+    code_description = None
+
+    # Fetch Verity data if enabled
+    if request.enrich_with_verity:
+        verity_data = await fetch_verity_code_info(request.hcpcs_code.upper())
+        if verity_data:
+            verity_enriched = True
+            code_description = verity_data.get("description")
+
+            # Extract policies from Verity response
+            policies_data = verity_data.get("policies", [])
+            if policies_data:
+                verity_policies = [
+                    VerityPolicyInfo(
+                        policy_id=p.get("policy_id", ""),
+                        title=p.get("title", ""),
+                        policy_type=p.get("policy_type", ""),
+                        disposition=p.get("disposition"),
+                    )
+                    for p in policies_data
+                ]
+
+            # Add info if code is not active
+            if not verity_data.get("is_active", True):
+                all_issues.append(AuditIssue(
+                    severity="error",
+                    category="hcpcs",
+                    message=f"Code {request.hcpcs_code} is inactive per Verity",
+                    recommendation="Verify current HCPCS code status and use active replacement if available"
+                ))
 
     # Run all validations
     all_issues.extend(validate_hcpcs(request.hcpcs_code))
@@ -243,12 +322,18 @@ async def audit_claim(request: ClaimAuditRequest):
     else:
         summary = f"Claim has {error_count} error(s) that must be fixed before submission."
 
+    if verity_enriched:
+        summary += " (Enriched with Verity policy data)"
+
     return ClaimAuditResponse(
         passed=passed,
         score=score,
         issues=all_issues,
         lcd_reference="L33822",
         summary=summary,
+        verity_enriched=verity_enriched,
+        verity_policies=verity_policies,
+        code_description=code_description,
     )
 
 
@@ -257,6 +342,7 @@ class QuickAuditRequest(BaseModel):
     hcpcs_code: str
     modifier: Optional[str] = None
     diagnosis_code: str
+    enrich_with_verity: bool = True
 
 
 @router.post("/quick", response_model=ClaimAuditResponse)
@@ -270,5 +356,6 @@ async def quick_audit(request: QuickAuditRequest):
         has_written_order=True,
         has_medical_necessity=True,
         insulin_therapy="mdi",
+        enrich_with_verity=request.enrich_with_verity,
     )
     return await audit_claim(full_request)

@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     # API Keys
     anthropic_api_key: str = ""
     voyage_api_key: str = ""  # For embeddings (Voyage AI)
+    verity_api_key: str = ""  # For Medicare coverage intelligence
 
     # Pinecone
     pinecone_api_key: str = ""

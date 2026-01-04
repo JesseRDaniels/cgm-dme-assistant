@@ -1,32 +1,43 @@
 # CGM DME Assistant - Project Instructions
 
 ## Current Status (Jan 4, 2026)
-- Backend: Built, not deployed
+- Backend: Built with Verity API integration, tested locally
 - Frontend: Built, not deployed
 - Pinecone: **14 vectors indexed** (LCD policies, HCPCS codes, denial reasons)
-- Verity MCP: **Installed** at ~/verity_mcp, configured in Claude Code
+- Verity API: **Integrated** into backend (codes, prior-auth, audit routers)
+- Verity MCP: **Configured** with working API key
 
 ## Next Steps
-1. **Test Verity MCP** - restart Claude Code, then test with `lookup_code("A9276")`
-2. **Deploy backend to Railway** - create project, set env vars, deploy
-3. **Deploy frontend** - Vercel or Railway static
-4. **Test end-to-end** - verify RAG chat, claim auditor, prior auth generator
+1. **Deploy backend to Railway** - create project, set env vars, deploy
+2. **Deploy frontend** - Vercel or Railway static
+3. **Test end-to-end** - verify all endpoints work in production
 
 ## Tech Stack
 - Backend: FastAPI + Python 3.11+
 - Vector DB: Pinecone (serverless, 512 dimensions, index: `cgm-dme`)
 - LLM: Claude 3.5 Sonnet (claude-sonnet-4-20250514)
 - Embeddings: Voyage AI (voyage-3-lite)
+- Coverage API: Verity Healthcare API
 - Frontend: React + Vite + Tailwind CSS v4
 
-## MCP Integrations
-- **Verity MCP** (~/verity_mcp): Medicare LCD/NCD lookups, prior auth checks
-  - `lookup_code("A9276")` - Code coverage info
-  - `search_policies("CGM")` - Search LCDs/NCDs
-  - `get_policy("L33822")` - Full LCD details
-  - `check_prior_auth(["A9276"])` - Prior auth requirements
-  - `compare_policies()` - Compare coverage across MACs
-  - `search_criteria()` - Search coverage criteria
+## Verity API Integration
+The backend directly integrates with Verity Healthcare API for:
+- **Code Lookups** (`/api/codes/{code}`) - HCPCS/CPT/ICD-10 with policies
+- **Prior Auth Checks** (`/api/prior-auth/check`) - PA requirements with documentation checklist
+- **Claim Auditing** (`/api/audit/claim`) - Enriched with Verity policy data
+
+Key files:
+- `backend/services/verity.py` - Verity API client
+- `backend/routers/codes.py` - Code lookup with Verity
+- `backend/routers/prior_auth.py` - Prior auth with Verity
+- `backend/routers/audit.py` - Claim audit with Verity enrichment
+
+## MCP Integration (for development)
+- **Verity MCP**: Configured with working API key in Claude Code
+  - `mcp__verity__lookup_code("A9276")` - Code coverage info
+  - `mcp__verity__search_policies("CGM")` - Search LCDs/NCDs
+  - `mcp__verity__get_policy("L33822")` - Full LCD details
+  - `mcp__verity__check_prior_auth(["A9276"])` - Prior auth requirements
 
 ## Pinecone Index Contents
 - **lcd_policies** (4 vectors): L33822 coverage, codes, documentation, denials
@@ -35,12 +46,13 @@
 
 ## Key Files
 - `backend/main.py` - FastAPI entrypoint
-- `backend/routers/audit.py` - Claim validation (LCD L33822)
+- `backend/services/verity.py` - Verity API client
+- `backend/routers/audit.py` - Claim validation with Verity enrichment
+- `backend/routers/codes.py` - HCPCS lookup via Verity
+- `backend/routers/prior_auth.py` - Prior auth checks via Verity
 - `backend/services/rag.py` - Core RAG pipeline
 - `backend/services/llm.py` - Claude integration
-- `frontend/src/App.jsx` - React app with tabs (Chat, Codes, Batch, Audit, Prior Auth)
-- `frontend/src/components/ClaimAuditor.jsx` - Claim validation UI
-- `frontend/src/components/PriorAuthGenerator.jsx` - Prior auth letter generator
+- `frontend/src/App.jsx` - React app with tabs
 - `data/chunks/all_chunks.json` - Knowledge base chunks (14 total)
 
 ## Domain Knowledge
@@ -51,11 +63,13 @@
 
 ## API Endpoints
 - `POST /api/chat` - RAG chat
-- `POST /api/audit/claim` - Full claim validation
-- `POST /api/audit/quick` - Quick code check
+- `POST /api/audit/claim` - Full claim validation (Verity-enriched)
+- `POST /api/audit/quick` - Quick code check (Verity-enriched)
+- `POST /api/prior-auth/check` - Prior auth check via Verity
+- `GET /api/prior-auth/jurisdictions` - List MAC jurisdictions
 - `POST /api/generate/prior-auth` - Generate prior auth letter
 - `POST /api/generate/dwo` - Generate detailed written order
-- `GET /api/codes/{code}` - HCPCS lookup
+- `GET /api/codes/{code}` - HCPCS lookup via Verity
 
 ## Running Locally
 ```bash
@@ -73,7 +87,7 @@ cd frontend && npm run dev
 ANTHROPIC_API_KEY=sk-ant-...
 PINECONE_API_KEY=pcsk_...
 VOYAGE_API_KEY=pa-...
-VERITY_API_KEY=vrt_live_4JVLAh43hfvSAZ0P
+VERITY_API_KEY=vrt_live_ruzkWh-LGh5VepXYnK72xZRiF2VIjfX-NoS-8zQXH84_b3e9
 ```
 
 ## Deployment (Railway)
@@ -84,6 +98,6 @@ railway login
 railway init  # or railway link
 railway up
 
-# Set env vars
-railway variables set ANTHROPIC_API_KEY=... PINECONE_API_KEY=... VOYAGE_API_KEY=...
+# Set env vars (including new VERITY_API_KEY)
+railway variables set ANTHROPIC_API_KEY=... PINECONE_API_KEY=... VOYAGE_API_KEY=... VERITY_API_KEY=...
 ```
