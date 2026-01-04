@@ -93,46 +93,49 @@ export default function CodeLookup() {
               <h3 className="text-xl font-bold font-mono text-blue-600">{selectedCode.code}</h3>
               <p className="text-lg text-gray-700">{selectedCode.short_description}</p>
             </div>
-            {selectedCode.medical_necessity_required && (
-              <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">
-                Medical Necessity Required
-              </span>
-            )}
+            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
+              {selectedCode.code_system || 'HCPCS'}
+            </span>
           </div>
 
-          <p className="text-gray-600 mb-4">{selectedCode.long_description}</p>
+          <p className="text-gray-600 mb-4">{selectedCode.description}</p>
 
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
               <p className="font-medium text-gray-500">Category</p>
-              <p className="text-gray-800">{selectedCode.category}</p>
+              <p className="text-gray-800 capitalize">{selectedCode.category || 'N/A'}</p>
             </div>
             <div>
-              <p className="font-medium text-gray-500">Pricing Type</p>
-              <p className="text-gray-800">{selectedCode.pricing_type}</p>
-            </div>
-            <div>
-              <p className="font-medium text-gray-500">Common Modifiers</p>
-              <div className="flex gap-1 flex-wrap">
-                {selectedCode.common_modifiers.map((mod) => (
-                  <span key={mod} className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded font-mono text-xs">
-                    {mod}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-medium text-gray-500">LCD Reference</p>
-              <p className="text-gray-800">{selectedCode.lcd_reference || 'N/A'}</p>
+              <p className="font-medium text-gray-500">Status</p>
+              <p className="text-gray-800">{selectedCode.is_active ? 'Active' : 'Inactive'}</p>
             </div>
           </div>
 
-          {selectedCode.bundling_rules && selectedCode.bundling_rules.length > 0 && (
-            <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded">
-              <p className="font-medium text-amber-800 text-sm mb-1">Bundling Rules:</p>
-              <ul className="text-sm text-amber-700 list-disc list-inside">
-                {selectedCode.bundling_rules.map((rule, i) => (
-                  <li key={i}>{rule}</li>
+          {/* RVU Info */}
+          {selectedCode.rvu && (
+            <div className="mt-4 p-3 bg-gray-50 border border-gray-200 rounded">
+              <p className="font-medium text-gray-700 text-sm mb-2">RVU Information</p>
+              <div className="grid grid-cols-3 gap-2 text-xs">
+                <div><span className="text-gray-500">Work:</span> {selectedCode.rvu.work_rvu}</div>
+                <div><span className="text-gray-500">PE (Non-Fac):</span> {selectedCode.rvu.pe_rvu_nonfacility}</div>
+                <div><span className="text-gray-500">Total:</span> {selectedCode.rvu.total_rvu_nonfacility}</div>
+              </div>
+            </div>
+          )}
+
+          {/* Policies */}
+          {selectedCode.policies && selectedCode.policies.length > 0 && (
+            <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded">
+              <p className="font-medium text-blue-800 text-sm mb-2">Coverage Policies:</p>
+              <ul className="text-sm text-blue-700 space-y-1">
+                {selectedCode.policies.map((policy, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="font-mono text-xs bg-blue-100 px-1 rounded">{policy.policy_id}</span>
+                    <span>{policy.title}</span>
+                    <span className={`text-xs px-1 rounded ${policy.disposition === 'covered' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                      {policy.disposition}
+                    </span>
+                  </li>
                 ))}
               </ul>
             </div>
