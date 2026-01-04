@@ -95,3 +95,32 @@ export async function quickAudit(data) {
   if (!response.ok) throw new Error('Audit failed');
   return response.json();
 }
+
+// Policy endpoints
+export async function getPolicy(policyId, includeCriteria = true, includeCodes = true) {
+  const params = new URLSearchParams({
+    include_criteria: includeCriteria,
+    include_codes: includeCodes,
+  });
+  const response = await fetch(`${API_BASE}/api/policies/${policyId}?${params}`);
+  if (!response.ok) throw new Error('Policy not found');
+  return response.json();
+}
+
+export async function comparePolicies(codes, jurisdictions = null) {
+  const params = new URLSearchParams({ codes: codes.join(',') });
+  if (jurisdictions) params.append('jurisdictions', jurisdictions.join(','));
+  const response = await fetch(`${API_BASE}/api/policies/compare/jurisdictions?${params}`);
+  if (!response.ok) throw new Error('Comparison failed');
+  return response.json();
+}
+
+export async function getPolicyChanges(since = null, policyId = null, changeType = null, limit = 20) {
+  const params = new URLSearchParams({ limit });
+  if (since) params.append('since', since);
+  if (policyId) params.append('policy_id', policyId);
+  if (changeType) params.append('change_type', changeType);
+  const response = await fetch(`${API_BASE}/api/policies/changes/recent?${params}`);
+  if (!response.ok) throw new Error('Failed to fetch changes');
+  return response.json();
+}

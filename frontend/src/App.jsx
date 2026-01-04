@@ -4,6 +4,7 @@ import CodeLookup from './components/CodeLookup';
 import BatchUpload from './components/BatchUpload';
 import ClaimAuditor from './components/ClaimAuditor';
 import PriorAuthGenerator from './components/PriorAuthGenerator';
+import PolicyBrowser from './components/PolicyBrowser';
 
 function App() {
   const [activeTab, setActiveTab] = useState('chat');
@@ -13,6 +14,7 @@ function App() {
     { id: 'audit', label: 'Audit', icon: '🔍' },
     { id: 'priorauth', label: 'Prior Auth', icon: '📝' },
     { id: 'codes', label: 'Codes', icon: '📋' },
+    { id: 'policies', label: 'Policies', icon: '📜' },
     { id: 'batch', label: 'Batch', icon: '📤' },
   ];
 
@@ -57,6 +59,7 @@ function App() {
         {activeTab === 'audit' && <ClaimAuditor />}
         {activeTab === 'priorauth' && <PriorAuthGenerator />}
         {activeTab === 'codes' && <CodeLookup />}
+        {activeTab === 'policies' && <PolicyBrowser />}
         {activeTab === 'batch' && <BatchUpload />}
       </main>
 
