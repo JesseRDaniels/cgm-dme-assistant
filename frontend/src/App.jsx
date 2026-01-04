@@ -2,12 +2,16 @@ import { useState } from 'react';
 import Chat from './components/Chat';
 import CodeLookup from './components/CodeLookup';
 import BatchUpload from './components/BatchUpload';
+import ClaimAuditor from './components/ClaimAuditor';
+import PriorAuthGenerator from './components/PriorAuthGenerator';
 
 function App() {
   const [activeTab, setActiveTab] = useState('chat');
 
   const tabs = [
     { id: 'chat', label: 'Chat', icon: '💬' },
+    { id: 'audit', label: 'Audit', icon: '🔍' },
+    { id: 'priorauth', label: 'Prior Auth', icon: '📝' },
     { id: 'codes', label: 'Codes', icon: '📋' },
     { id: 'batch', label: 'Batch', icon: '📤' },
   ];
@@ -48,8 +52,10 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col bg-gray-50">
         {activeTab === 'chat' && <Chat />}
+        {activeTab === 'audit' && <ClaimAuditor />}
+        {activeTab === 'priorauth' && <PriorAuthGenerator />}
         {activeTab === 'codes' && <CodeLookup />}
         {activeTab === 'batch' && <BatchUpload />}
       </main>

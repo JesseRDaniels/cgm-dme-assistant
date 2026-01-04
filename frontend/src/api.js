@@ -75,3 +75,23 @@ export async function getBatchResults(batchId) {
   if (!response.ok) throw new Error('Results fetch failed');
   return response.json();
 }
+
+export async function auditClaim(data) {
+  const response = await fetch(`${API_BASE}/api/audit/claim`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error('Audit failed');
+  return response.json();
+}
+
+export async function quickAudit(data) {
+  const response = await fetch(`${API_BASE}/api/audit/quick`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) throw new Error('Audit failed');
+  return response.json();
+}
