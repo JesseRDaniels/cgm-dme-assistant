@@ -23,27 +23,39 @@ VOYAGE_API_KEY = os.getenv("VOYAGE_API_KEY")
 INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "cgm-dme")
 EMBEDDING_MODEL = "voyage-3-lite"
 EMBEDDING_DIMENSIONS = 512  # voyage-3-lite uses 512 dimensions
-BATCH_SIZE = 50  # Voyage supports up to 128
+BATCH_SIZE = 5  # Very small batches to avoid rate limits
+MAX_RETRIES = 5
+RETRY_DELAY = 10  # seconds
+RECREATE_INDEX = False  # Set True to delete and recreate
 
 
 def get_embeddings(texts: list[str]) -> list[list[float]]:
-    """Get embeddings using Voyage AI."""
-    response = httpx.post(
-        "https://api.voyageai.com/v1/embeddings",
-        headers={
-            "Authorization": f"Bearer {VOYAGE_API_KEY}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": EMBEDDING_MODEL,
-            "input": texts,
-            "input_type": "document",
-        },
-        timeout=60,
-    )
-    response.raise_for_status()
-    data = response.json()
-    return [item["embedding"] for item in data["data"]]
+    """Get embeddings using Voyage AI with retry logic."""
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = httpx.post(
+                "https://api.voyageai.com/v1/embeddings",
+                headers={
+                    "Authorization": f"Bearer {VOYAGE_API_KEY}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": EMBEDDING_MODEL,
+                    "input": texts,
+                    "input_type": "document",
+                },
+                timeout=60,
+            )
+            response.raise_for_status()
+            data = response.json()
+            return [item["embedding"] for item in data["data"]]
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429 and attempt < MAX_RETRIES - 1:
+                print(f"    Rate limited, waiting {RETRY_DELAY}s (attempt {attempt + 1}/{MAX_RETRIES})...")
+                time.sleep(RETRY_DELAY)
+                continue
+            raise
+    return []
 
 
 def main():
@@ -74,17 +86,21 @@ def main():
     existing_indexes = [idx.name for idx in pc.list_indexes()]
 
     if INDEX_NAME in existing_indexes:
-        print(f"Index '{INDEX_NAME}' exists. Deleting and recreating...")
-        pc.delete_index(INDEX_NAME)
-        time.sleep(5)  # Wait for deletion
+        if RECREATE_INDEX:
+            print(f"Index '{INDEX_NAME}' exists. Deleting and recreating...")
+            pc.delete_index(INDEX_NAME)
+            time.sleep(5)  # Wait for deletion
+        else:
+            print(f"Index '{INDEX_NAME}' exists. Adding/updating vectors...")
 
-    print(f"Creating index '{INDEX_NAME}'...")
-    pc.create_index(
-        name=INDEX_NAME,
-        dimension=EMBEDDING_DIMENSIONS,
-        metric="cosine",
-        spec=ServerlessSpec(cloud="aws", region="us-east-1"),
-    )
+    if INDEX_NAME not in existing_indexes or RECREATE_INDEX:
+        print(f"Creating index '{INDEX_NAME}'...")
+        pc.create_index(
+            name=INDEX_NAME,
+            dimension=EMBEDDING_DIMENSIONS,
+            metric="cosine",
+            spec=ServerlessSpec(cloud="aws", region="us-east-1"),
+        )
 
     # Wait for index to be ready
     while True:
@@ -142,8 +158,8 @@ def main():
             index.upsert(vectors=vectors, namespace=namespace)
             print(f"  Upserted {len(vectors)} vectors to namespace '{namespace}'")
 
-        # Small delay to avoid rate limits
-        time.sleep(0.5)
+        # Delay between batches to avoid rate limits
+        time.sleep(5)
 
     # Print index stats
     stats = index.describe_index_stats()
