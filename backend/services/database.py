@@ -162,7 +162,8 @@ async def save_snapshot(chunks: list, metadata: dict = None) -> dict:
         # Calculate changes
         changes = {"added": 0, "updated": 0, "removed": 0}
         if active:
-            old_chunks = {c["id"]: c for c in active["chunks"]}
+            active_chunks = active["chunks"] if isinstance(active["chunks"], list) else json.loads(active["chunks"])
+            old_chunks = {c["id"]: c for c in active_chunks}
             new_chunks = {c["id"]: c for c in chunks}
 
             for chunk_id, chunk in new_chunks.items():
@@ -232,8 +233,8 @@ async def get_active_snapshot() -> Optional[dict]:
                 "deployed_at": row["deployed_at"].isoformat() if row["deployed_at"] else None,
                 "chunk_count": row["chunk_count"],
                 "content_hash": row["content_hash"],
-                "chunks": row["chunks"],
-                "metadata": row["metadata"]
+                "chunks": row["chunks"] if isinstance(row["chunks"], list) else json.loads(row["chunks"]),
+                "metadata": row["metadata"] if isinstance(row["metadata"], dict) else json.loads(row["metadata"])
             }
         return None
 
@@ -255,8 +256,8 @@ async def get_snapshot(snapshot_id: str) -> Optional[dict]:
                 "deployed_at": row["deployed_at"].isoformat() if row["deployed_at"] else None,
                 "chunk_count": row["chunk_count"],
                 "content_hash": row["content_hash"],
-                "chunks": row["chunks"],
-                "metadata": row["metadata"],
+                "chunks": row["chunks"] if isinstance(row["chunks"], list) else json.loads(row["chunks"]),
+                "metadata": row["metadata"] if isinstance(row["metadata"], dict) else json.loads(row["metadata"]),
                 "is_active": row["is_active"]
             }
         return None
@@ -282,7 +283,7 @@ async def list_snapshots(limit: int = 10) -> list:
                 "deployed_at": row["deployed_at"].isoformat() if row["deployed_at"] else None,
                 "chunk_count": row["chunk_count"],
                 "is_active": row["is_active"],
-                "metadata": row["metadata"]
+                "metadata": row["metadata"] if isinstance(row["metadata"], dict) else json.loads(row["metadata"]) if row["metadata"] else {}
             }
             for row in rows
         ]
