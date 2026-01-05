@@ -32,10 +32,10 @@ Key files:
 - `backend/routers/prior_auth.py` - Prior auth with Verity
 - `backend/routers/audit.py` - Claim audit with Verity enrichment
 
-## Pinecone Index Contents (60 vectors)
+## Pinecone Index Contents (70 vectors)
 - **hcpcs_codes** (31 vectors): All CGM/glucose HCPCS codes from L33822
-- **lcd_policies** (18 vectors): Coverage criteria by section (documentation, frequency, indications, limitations)
-- **denial_reasons** (5 vectors): CO-4, CO-16, CO-96, CO-167, CO-197
+- **lcd_policies** (23 vectors): Coverage criteria by section (documentation, frequency, indications, limitations)
+- **denial_reasons** (10 vectors): CO-4, CO-16, CO-27, CO-29, CO-50, CO-96, CO-119, CO-167, CO-197, PR-204
 - **default** (6 vectors): Documentation requirements, appeal strategies
 
 ## Key Files
