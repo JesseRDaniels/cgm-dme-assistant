@@ -32,6 +32,68 @@ TYPE_TO_NAMESPACE = {
 # Verity API config
 VERITY_BASE_URL = "https://verity.backworkai.com/api/v1"
 
+# Backend URL for links in Slack messages
+BACKEND_URL = "https://cgm-dme-assistant-production.up.railway.app"
+
+
+def send_slack_notification(message: str, emoji: str = "🔄", color: str = None):
+    """Send notification to Slack webhook."""
+    settings = get_settings()
+    if not settings.slack_webhook_url:
+        return
+
+    try:
+        payload = {
+            "text": f"{emoji} *CGM DME Sync*",
+            "attachments": [
+                {
+                    "color": color or "#36a64f",
+                    "text": message,
+                    "footer": "CGM DME Assistant",
+                    "ts": int(datetime.now().timestamp())
+                }
+            ]
+        }
+        httpx.post(settings.slack_webhook_url, json=payload, timeout=10)
+    except Exception as e:
+        logger.warning(f"Failed to send Slack notification: {e}")
+
+
+def notify_sync_success(snapshot_id: str, chunks: int, duration: float, changes: dict):
+    """Notify Slack of successful sync."""
+    added = changes.get("added", 0)
+    updated = changes.get("updated", 0)
+    removed = changes.get("removed", 0)
+
+    if added == 0 and updated == 0 and removed == 0:
+        message = f"No changes detected. Content unchanged.\n`{snapshot_id}`"
+        send_slack_notification(message, "✅", "#36a64f")
+    else:
+        message = (
+            f"Synced *{chunks}* vectors in {duration:.1f}s\n"
+            f"• Added: {added}\n• Updated: {updated}\n• Removed: {removed}\n"
+            f"`{snapshot_id}`"
+        )
+        send_slack_notification(message, "✅", "#36a64f")
+
+
+def notify_sync_paused(snapshot_id: str, change_percent: float, changes: dict):
+    """Notify Slack that sync was paused due to safety threshold."""
+    message = (
+        f"⚠️ *Sync paused* - {change_percent:.1f}% change exceeds {SAFETY_THRESHOLD_PERCENT}% threshold\n"
+        f"• Added: {changes.get('added', 0)}\n"
+        f"• Updated: {changes.get('updated', 0)}\n"
+        f"• Removed: {changes.get('removed', 0)}\n\n"
+        f"To approve:\n```\ncurl -X POST {BACKEND_URL}/api/sync/approve/{snapshot_id}\n```"
+    )
+    send_slack_notification(message, "⚠️", "#ff9800")
+
+
+def notify_sync_failed(error: str):
+    """Notify Slack of sync failure."""
+    message = f"Sync failed:\n```{error[:500]}```"
+    send_slack_notification(message, "❌", "#dc3545")
+
 
 class SyncStatus(BaseModel):
     status: str
@@ -643,6 +705,7 @@ async def do_sync(
                 reason = f"Safety threshold exceeded: {change_percent:.1f}% change (threshold: {SAFETY_THRESHOLD_PERCENT}%)"
                 logger.warning(reason)
                 await record_sync_paused(sync_id, reason)
+                notify_sync_paused(snapshot_id, change_percent, changes)
                 return SyncResult(
                     status="paused",
                     snapshot_id=snapshot_id,
@@ -668,11 +731,14 @@ async def do_sync(
             changes.get("removed", 0)
         )
 
+        duration = time.time() - start_time
+        notify_sync_success(snapshot_id, total_upserted, duration, changes)
+
         return SyncResult(
             status="success",
             snapshot_id=snapshot_id,
             chunks_updated=total_upserted,
-            duration_seconds=time.time() - start_time,
+            duration_seconds=duration,
             message=f"Synced {total_upserted} vectors",
             changes=changes
         )
@@ -680,6 +746,7 @@ async def do_sync(
     except Exception as e:
         logger.error(f"Sync failed: {e}")
         await record_sync_error(sync_id, str(e))
+        notify_sync_failed(str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 

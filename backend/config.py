@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     # PostgreSQL
     database_url: str = ""
 
+    # Slack notifications
+    slack_webhook_url: str = ""
+
     # App Settings
     debug: bool = False
     log_level: str = "INFO"
