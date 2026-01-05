@@ -15,10 +15,26 @@ from services.pinecone_client import get_index, upsert_vectors
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/sync", tags=["sync"])
 
-# Paths - these work in Railway where backend/ is the root
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
-CHUNKS_FILE = DATA_DIR / "chunks" / "all_chunks.json"
-SYNC_STATE_FILE = DATA_DIR / "sync_state.json"
+# Paths - check multiple locations for Railway vs local
+def get_data_paths():
+    """Get data file paths, checking Railway and local locations."""
+    # In Railway, backend/ is root, so data/ is at ../data/ or we use backend/data/
+    # Locally, we're in backend/ and data/ is at ../data/
+    possible_roots = [
+        Path(__file__).parent.parent / "data",  # backend/data/ (Railway)
+        Path(__file__).parent.parent.parent / "data",  # ../data/ (local)
+    ]
+
+    for root in possible_roots:
+        chunks = root / "chunks" / "all_chunks.json"
+        if chunks.exists():
+            return root, chunks, root / "sync_state.json"
+
+    # Default to backend/data/ for Railway (will be created)
+    root = Path(__file__).parent.parent / "data"
+    return root, root / "chunks" / "all_chunks.json", root / "sync_state.json"
+
+DATA_DIR, CHUNKS_FILE, SYNC_STATE_FILE = get_data_paths()
 
 # Namespace mapping
 TYPE_TO_NAMESPACE = {

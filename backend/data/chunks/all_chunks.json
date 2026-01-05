@@ -1,0 +1,896 @@
+[
+  {
+    "id": "hcpcs_A4233",
+    "text": "HCPCS Code: A4233\nDescription: Replacement battery, alkaline (other than j cell), for use with medically necessary home blood glucose monitor owned by patient, each\nShort Description: Alkalin batt for glucose mon\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4233",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4234",
+    "text": "HCPCS Code: A4234\nDescription: Replacement battery, alkaline, j cell, for use with medically necessary home blood glucose monitor owned by patient, each\nShort Description: J-cell batt for glucose mon\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4234",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4235",
+    "text": "HCPCS Code: A4235\nDescription: Replacement battery, lithium, for use with medically necessary home blood glucose monitor owned by patient, each\nShort Description: Lithium batt for glucose mon\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4235",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4236",
+    "text": "HCPCS Code: A4236\nDescription: Replacement battery, silver oxide, for use with medically necessary home blood glucose monitor owned by patient, each\nShort Description: Silvr oxide batt glucose mon\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4236",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4238",
+    "text": "HCPCS Code: A4238\nDescription: Supply allowance for adjunctive, non-implanted continuous glucose monitor (cgm), includes all supplies and accessories, 1 month supply = 1 unit of service\nShort Description: Adju cgm supply allowance\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4238",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4239",
+    "text": "HCPCS Code: A4239\nDescription: Supply allowance for non-adjunctive, non-implanted continuous glucose monitor (cgm), includes all supplies and accessories, 1 month supply = 1 unit of service\nShort Description: Non-adju cgm supply allow\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4239",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4244",
+    "text": "HCPCS Code: A4244\nDescription: Alcohol or peroxide, per pint\nShort Description: Alcohol or peroxide per pint\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4244",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4245",
+    "text": "HCPCS Code: A4245\nDescription: Alcohol wipes, per box\nShort Description: Alcohol wipes per box\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4245",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4246",
+    "text": "HCPCS Code: A4246\nDescription: Betadine or phisohex solution, per pint\nShort Description: Betadine/phisohex solution\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4246",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4247",
+    "text": "HCPCS Code: A4247\nDescription: Betadine or iodine swabs/wipes, per box\nShort Description: Betadine/iodine swabs/wipes\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4247",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4250",
+    "text": "HCPCS Code: A4250\nDescription: Urine test or reagent strips or tablets (100 tablets or strips)\nShort Description: Urine reagent strips/tablets\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4250",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4253",
+    "text": "HCPCS Code: A4253\nDescription: Blood glucose test or reagent strips for home blood glucose monitor, per 50 strips\nShort Description: Blood glucose/reagent strips\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4253",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4255",
+    "text": "HCPCS Code: A4255\nDescription: Platforms for home blood glucose monitor, 50 per box\nShort Description: Glucose monitor platforms\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4255",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4256",
+    "text": "HCPCS Code: A4256\nDescription: Normal, low and high calibrator solution / chips\nShort Description: Calibrator solution/chips\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4256",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4257",
+    "text": "HCPCS Code: A4257\nDescription: Replacement lens shield cartridge for use with laser skin piercing device, each\nShort Description: Replace lensshield cartridge\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4257",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4258",
+    "text": "HCPCS Code: A4258\nDescription: Spring-powered device for lancet, each\nShort Description: Lancet device each\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4258",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4259",
+    "text": "HCPCS Code: A4259\nDescription: Lancets, per box of 100\nShort Description: Lancets per box\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4259",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A4271",
+    "text": "HCPCS Code: A4271\nDescription: Integrated lancing and blood sample testing cartridges for home blood glucose monitor, per 50 tests\nShort Description: Home lancing/test cartridges\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A4271",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A9275",
+    "text": "HCPCS Code: A9275\nDescription: Home glucose disposable monitor, includes test strips\nShort Description: Disp home glucose monitor\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A9275",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A9276",
+    "text": "HCPCS Code: A9276\nDescription: Sensor; invasive (e.g., subcutaneous), disposable, for use with non-durable medical equipment interstitial continuous glucose monitoring system, one unit = 1 day supply\nShort Description: Disposable sensor, cgm sys\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A9276",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A9277",
+    "text": "HCPCS Code: A9277\nDescription: Transmitter; external, for use with non-durable medical equipment interstitial continuous glucose monitoring system\nShort Description: External transmitter, cgm\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A9277",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A9278",
+    "text": "HCPCS Code: A9278\nDescription: Receiver (monitor); external, for use with non-durable medical equipment interstitial continuous glucose monitoring system\nShort Description: External receiver, cgm sys\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A9278",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_A9999",
+    "text": "HCPCS Code: A9999\nDescription: Miscellaneous dme supply or accessory, not otherwise specified\nShort Description: Dme supply or accessory, nos\nCategory: supplies\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "A9999",
+      "category": "supplies",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E0607",
+    "text": "HCPCS Code: E0607\nDescription: Home blood glucose monitor\nShort Description: Blood glucose monitor home\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E0607",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E0620",
+    "text": "HCPCS Code: E0620\nDescription: Skin piercing device for collection of capillary blood, laser, each\nShort Description: Cap bld skin piercing laser\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E0620",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E1399",
+    "text": "HCPCS Code: E1399\nDescription: Durable medical equipment, miscellaneous\nShort Description: Durable medical equipment mi\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E1399",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E2100",
+    "text": "HCPCS Code: E2100\nDescription: Blood glucose monitor with integrated voice synthesizer\nShort Description: Bld glucose monitor w voice\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E2100",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E2101",
+    "text": "HCPCS Code: E2101\nDescription: Blood glucose monitor with integrated lancing/blood sample\nShort Description: Bld glucose monitor w lance\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E2101",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E2102",
+    "text": "HCPCS Code: E2102\nDescription: Adjunctive, non-implanted continuous glucose monitor or receiver\nShort Description: Adju cgm receiver/monitor\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E2102",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E2103",
+    "text": "HCPCS Code: E2103\nDescription: Non-adjunctive, non-implanted continuous glucose monitor or receiver\nShort Description: Non-adju cgm receiver/mon\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E2103",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "hcpcs_E2104",
+    "text": "HCPCS Code: E2104\nDescription: Home blood glucose monitor for use with integrated lancing/blood sample testing cartridge\nShort Description: Glucose monitor w cartridge\nCategory: dme\nCoverage: Covered under LCD L33822\nPolicy: Glucose Monitors - Medicare Part B DME benefit\n\nBilling Requirements:\n- Requires KX modifier to certify medical necessity\n- Must have diabetes diagnosis (E10.x, E11.x, E13.x, O24.x)\n- Documentation must support LCD L33822 criteria\n- Face-to-face visit within 6 months for CGM codes",
+    "metadata": {
+      "source": "Verity API + LCD L33822",
+      "code": "E2104",
+      "category": "dme",
+      "type": "hcpcs_code",
+      "policy_id": "L33822",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation",
+    "text": "LCD L33822: Glucose Monitors\nSection: Documentation Requirements\n\n\u2022 A Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted and WOPD must be received prior to delivery for DMEPOS base items that require WOPD.\n\n\u2022 Practitioner must document beneficiary (or caregiver) training/competency with the specific device and provide a prescription that evidences training and testing frequency.\n\n\u2022 For CGM initial coverage and continued coverage, the treating practitioner must document an in-person or Medicare-approved telehealth visit within six months prior to ordering and every six months thereafter to evaluate control and verify adherence to the CGM regimen.\n\n\u2022 Practitioner must certify severe visual impairment (best corrected visual acuity 20/200 or worse in both eyes) or severe manual dexterity impairment when claiming E2100/E2101 as applicable.\n\n\u2022 Suppliers must maintain proof of delivery (POD) documentation and make it available to the Medicare contractor upon request.\n\n\u2022 Suppliers must contact the beneficiary and document an affirmative refill request prior to dispensing refills and record the timing of contact (no sooner than 30 days prior to expected end of supply) and delivery timing (no sooner than 10 days prior to expected end).\n\n\u2022 CGM devices billed under E2102/E2103 must have PDAC correct-coding review documentation and be listed on the PDAC Product Classification List (PCL).\n\nTags: document:prescription, device:CGM, refill:affirmative-response, document:adherence, time:10-days, visit:in-person-or-telehealth, hcpcs:E2102, process:refill-contact, impairment:manual-dexterity, document:practitioner-certification, document:POD, document:training, hcpcs:E2103, process:pre-claim-requirement, hcpcs:E2100, staff:practitioner, document:SWO, supplier:records, time:6-months, hcpcs:E2101, document:WOPD, visual_acuity:<=20/200, process:PCL-documented, time:30-days, process:PDAC-review, body:eye",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "category": "Documentation Requirements",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation_0",
+    "text": "LCD L33822 - Documentation Requirements\n\nA Standard Written Order (SWO) must be communicated to the supplier before a claim is submitted and WOPD must be received prior to delivery for DMEPOS base items that require WOPD.\n\nRelated Tags: document:SWO, document:WOPD, process:pre-claim-requirement",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "block_id": "L33822_documentation_0",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation_1",
+    "text": "LCD L33822 - Documentation Requirements\n\nPractitioner must document beneficiary (or caregiver) training/competency with the specific device and provide a prescription that evidences training and testing frequency.\n\nRelated Tags: document:training, document:prescription, staff:practitioner",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "block_id": "L33822_documentation_1",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation_2",
+    "text": "LCD L33822 - Documentation Requirements\n\nFor CGM initial coverage and continued coverage, the treating practitioner must document an in-person or Medicare-approved telehealth visit within six months prior to ordering and every six months thereafter to evaluate control and verify adherence to the CGM regimen.\n\nRelated Tags: visit:in-person-or-telehealth, time:6-months, document:adherence, device:CGM",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "block_id": "L33822_documentation_2",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation_3",
+    "text": "LCD L33822 - Documentation Requirements\n\nPractitioner must certify severe visual impairment (best corrected visual acuity 20/200 or worse in both eyes) or severe manual dexterity impairment when claiming E2100/E2101 as applicable.\n\nRelated Tags: hcpcs:E2100, hcpcs:E2101, body:eye, visual_acuity:<=20/200, impairment:manual-dexterity, document:practitioner-certification",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "block_id": "L33822_documentation_3",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_documentation_4",
+    "text": "LCD L33822 - Documentation Requirements\n\nSuppliers must maintain proof of delivery (POD) documentation and make it available to the Medicare contractor upon request.\n\nRelated Tags: document:POD, supplier:records",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "documentation",
+      "type": "lcd_policy",
+      "block_id": "L33822_documentation_4",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_frequency",
+    "text": "LCD L33822: Glucose Monitors\nSection: Frequency and Quantity Limits\n\n\u2022 For beneficiaries not treated with insulin, up to 100 test strips (A4253) and up to 100 lancets (A4259) every three months are covered when basic criteria are met.\n\n\u2022 For beneficiaries treated with insulin, up to 300 test strips (A4253) and up to 300 lancets (A4259) every three months are covered when basic criteria are met.\n\n\u2022 Quantities exceeding the usual utilization (more than 100 or 300 strips/lancets per three months as applicable) are covered only if (a) basic criteria are met, (b) treating practitioner had an in-person or Medicare-approved telehealth visit within six months prior to ordering, and (c) every six months the practitioner verifies adherence to the high-utilization testing regimen.\n\n\u2022 Supplies for adjunctive or non-adjunctive CGMs (A4238, A4239) are a monthly allowance that may be billed up to a maximum of three units of service and no more than a 90-day supply may be dispensed at a time.\n\n\u2022 Suppliers must not dispense more than a three-month quantity of BGM testing supplies at a time.\n\n\u2022 Suppliers must contact beneficiaries no sooner than 30 calendar days prior to expected end of current supply and deliver refills no sooner than 10 calendar days prior to expected end of current supply.\n\nTags: hcpcs:A4253, time:10-days, hcpcs:A4238, visit:in-person-or-telehealth, hcpcs:A4259, supplies:test-strips|lancets, process:refill-timing, treatment:insulin-treated, time:90-days, frequency:<=100-per-3-months, frequency:<=3-UOS-per-90-days, time:6-months, treatment:non-insulin, hcpcs:A4239, frequency:<=3-months, frequency:<=300-per-3-months, supply_limit:90-days, frequency:>100-or->300-per-3-months, time:30-days, time:3-months, requirement:adherence-verification, device:BGM",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "frequency",
+      "type": "lcd_policy",
+      "category": "Frequency and Quantity Limits",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_frequency_0",
+    "text": "LCD L33822 - Frequency and Quantity Limits\n\nFor beneficiaries not treated with insulin, up to 100 test strips (A4253) and up to 100 lancets (A4259) every three months are covered when basic criteria are met.\n\nRelated Tags: hcpcs:A4253, hcpcs:A4259, treatment:non-insulin, frequency:<=100-per-3-months, time:3-months",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "frequency",
+      "type": "lcd_policy",
+      "block_id": "L33822_frequency_0",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_frequency_1",
+    "text": "LCD L33822 - Frequency and Quantity Limits\n\nFor beneficiaries treated with insulin, up to 300 test strips (A4253) and up to 300 lancets (A4259) every three months are covered when basic criteria are met.\n\nRelated Tags: hcpcs:A4253, hcpcs:A4259, treatment:insulin-treated, frequency:<=300-per-3-months, time:3-months",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "frequency",
+      "type": "lcd_policy",
+      "block_id": "L33822_frequency_1",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_frequency_2",
+    "text": "LCD L33822 - Frequency and Quantity Limits\n\nQuantities exceeding the usual utilization (more than 100 or 300 strips/lancets per three months as applicable) are covered only if (a) basic criteria are met, (b) treating practitioner had an in-person or Medicare-approved telehealth visit within six months prior to ordering, and (c) every six months the practitioner verifies adherence to the high-utilization testing regimen.\n\nRelated Tags: frequency:>100-or->300-per-3-months, time:6-months, visit:in-person-or-telehealth, requirement:adherence-verification",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "frequency",
+      "type": "lcd_policy",
+      "block_id": "L33822_frequency_2",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_frequency_3",
+    "text": "LCD L33822 - Frequency and Quantity Limits\n\nSupplies for adjunctive or non-adjunctive CGMs (A4238, A4239) are a monthly allowance that may be billed up to a maximum of three units of service and no more than a 90-day supply may be dispensed at a time.\n\nRelated Tags: hcpcs:A4238, hcpcs:A4239, frequency:<=3-UOS-per-90-days, time:90-days, supply_limit:90-days",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "frequency",
+      "type": "lcd_policy",
+      "block_id": "L33822_frequency_3",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications",
+    "text": "LCD L33822: Glucose Monitors\nSection: Coverage Indications\n\n\u2022 Beneficiary has diabetes mellitus and the treating practitioner has concluded the beneficiary (or caregiver) has sufficient training using the prescribed device as evidenced by a prescription for appropriate supplies and testing frequency.\n\n\u2022 Home blood glucose monitors with special features (HCPCS E2100, E2101) are covered when basic criteria are met and the practitioner certifies severe visual impairment (best corrected visual acuity 20/200 or worse in both eyes).\n\n\u2022 HCPCS E2101 is covered when basic criteria are met and the practitioner certifies an impairment of manual dexterity severe enough to require the special monitoring system (coverage for manual dexterity is independent of visual impairment).\n\n\u2022 Lancets (A4259), test reagent strips (A4253), glucose control solutions (A4256) and spring powered lancet devices (A4258) are covered for beneficiaries for whom the glucose monitor is covered.\n\n\u2022 A Continuous Glucose Monitor (CGM) and related supplies are covered when all initial criteria are met: beneficiary has diabetes mellitus; practitioner documents sufficient training and issues a prescription; CGM is prescribed in accordance with FDA indications; beneficiary is either insulin-treated or meets documented criteria for problematic hypoglycemia; and the treating practitioner had an in-person or Medicare-approved telehealth visit within six months prior to ordering.\n\n\u2022 When a CGM (E2102 or E2103) is covered, the related supply allowance (A4238 or A4239) is also covered consistent with the CGM coverage criteria.\n\nTags: diagnosis:diabetes-mellitus, document:prescription, hcpcs:A4253, device:CGM, hcpcs:A4258, treatment:training-documented, hcpcs:A4238, visit:in-person-or-telehealth, hcpcs:A4259, hcpcs:E2102, document:training, impairment:manual-dexterity, treatment:insulin-treated|or|problematic-hypoglycemia, hcpcs:E2103, hcpcs:E2100, hcpcs:A4256, time:6-months, hcpcs:E2101, hcpcs:A4239, visual_acuity:<=20/200, body:eye",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "category": "Coverage Indications",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications_0",
+    "text": "LCD L33822 - Coverage Indications\n\nBeneficiary has diabetes mellitus and the treating practitioner has concluded the beneficiary (or caregiver) has sufficient training using the prescribed device as evidenced by a prescription for appropriate supplies and testing frequency.\n\nRelated Tags: diagnosis:diabetes-mellitus, treatment:training-documented, document:prescription",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "block_id": "L33822_indications_0",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications_1",
+    "text": "LCD L33822 - Coverage Indications\n\nHome blood glucose monitors with special features (HCPCS E2100, E2101) are covered when basic criteria are met and the practitioner certifies severe visual impairment (best corrected visual acuity 20/200 or worse in both eyes).\n\nRelated Tags: hcpcs:E2100, hcpcs:E2101, body:eye, visual_acuity:<=20/200, diagnosis:diabetes-mellitus",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "block_id": "L33822_indications_1",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications_2",
+    "text": "LCD L33822 - Coverage Indications\n\nHCPCS E2101 is covered when basic criteria are met and the practitioner certifies an impairment of manual dexterity severe enough to require the special monitoring system (coverage for manual dexterity is independent of visual impairment).\n\nRelated Tags: hcpcs:E2101, impairment:manual-dexterity, diagnosis:diabetes-mellitus",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "block_id": "L33822_indications_2",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications_3",
+    "text": "LCD L33822 - Coverage Indications\n\nLancets (A4259), test reagent strips (A4253), glucose control solutions (A4256) and spring powered lancet devices (A4258) are covered for beneficiaries for whom the glucose monitor is covered.\n\nRelated Tags: hcpcs:A4259, hcpcs:A4253, hcpcs:A4256, hcpcs:A4258, diagnosis:diabetes-mellitus",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "block_id": "L33822_indications_3",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_indications_4",
+    "text": "LCD L33822 - Coverage Indications\n\nA Continuous Glucose Monitor (CGM) and related supplies are covered when all initial criteria are met: beneficiary has diabetes mellitus; practitioner documents sufficient training and issues a prescription; CGM is prescribed in accordance with FDA indications; beneficiary is either insulin-treated or meets documented criteria for problematic hypoglycemia; and the treating practitioner had an in-person or Medicare-approved telehealth visit within six months prior to ordering.\n\nRelated Tags: device:CGM, diagnosis:diabetes-mellitus, treatment:insulin-treated|or|problematic-hypoglycemia, visit:in-person-or-telehealth, time:6-months, document:prescription, document:training",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "indications",
+      "type": "lcd_policy",
+      "block_id": "L33822_indications_4",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations",
+    "text": "LCD L33822: Glucose Monitors\nSection: Coverage Limitations and Exclusions\n\n\u2022 Any glucose monitor or supplies will be denied as not reasonable and necessary if basic coverage criteria (diabetes diagnosis and documented sufficient training/prescription) are not met.\n\n\u2022 The medical necessity for laser skin piercing device (E0620) and lens shield cartridge (A4257) has not been established and claims for E0620 and A4257 will be denied.\n\n\u2022 If any CGM initial criteria or the required six\u2011month continued coverage visit are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.\n\n\u2022 Non-adjunctive CGMs replace standard home BGMs and related supplies; claims for a BGM and related supplies billed in addition to a non-adjunctive CGM (E2103) and supply allowance (A4239) will be denied.\n\n\u2022 Claims for CGM systems billed as E2102 or E2103 must be for devices listed on the PDAC Product Classification List (PCL); otherwise the claim will be denied as incorrect coding.\n\n\u2022 Items/services billed without a Standard Written Order (SWO) or DMEPOS base items delivered without a required Written Order Prior to Delivery (WOPD) will be denied as not reasonable and necessary.\n\n\u2022 Items delivered without proof of delivery (POD) documentation or refills delivered without a documented affirmative refill request will be denied as not reasonable and necessary.\n\n\u2022 More than one spring powered device (A4258) per six months is not reasonable and necessary.\n\n\u2022 Claims that do not meet coding guidelines (HCPCS/CMS/LCD or related policy guidance) will be denied as not reasonable and necessary/incorrectly coded.\n\n\u2022 Adjunctive CGM supply allowance (A4238) does not include a home BGM and related testing supplies; BGM supplies may be billed separately only for adjunctive CGMs.\n\nTags: diagnosis:diabetes-mellitus, document:prescription, device:CGM, device:non-adjunctive-CGM, refill:affirmative-response, hcpcs:A4258, hcpcs:A4238, hcpcs:A4257, visit:in-person-or-telehealth, conflict:duplicate-billing, hcpcs:E2102, document:training, document:POD, process:coding-guidelines, hcpcs:E2103, process:refill-documentation, frequency:<=1-per-6-months, outcome:denial-incorrect-coding, hcpcs:E0620, document:SWO, time:6-months, document:WOPD, conflict:billing-limits, hcpcs:A4239, device:adjunctive-CGM, process:PCL-listed, device:laser-piercing, process:pre-billing-order, process:PDAC-review",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "category": "Coverage Limitations and Exclusions",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations_0",
+    "text": "LCD L33822 - Coverage Limitations and Exclusions\n\nAny glucose monitor or supplies will be denied as not reasonable and necessary if basic coverage criteria (diabetes diagnosis and documented sufficient training/prescription) are not met.\n\nRelated Tags: diagnosis:diabetes-mellitus, document:training, document:prescription",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "block_id": "L33822_limitations_0",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations_1",
+    "text": "LCD L33822 - Coverage Limitations and Exclusions\n\nThe medical necessity for laser skin piercing device (E0620) and lens shield cartridge (A4257) has not been established and claims for E0620 and A4257 will be denied.\n\nRelated Tags: hcpcs:E0620, hcpcs:A4257, device:laser-piercing",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "block_id": "L33822_limitations_1",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations_2",
+    "text": "LCD L33822 - Coverage Limitations and Exclusions\n\nIf any CGM initial criteria or the required six\u2011month continued coverage visit are not met, the CGM and related supply allowance will be denied as not reasonable and necessary.\n\nRelated Tags: device:CGM, time:6-months, visit:in-person-or-telehealth",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "block_id": "L33822_limitations_2",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations_3",
+    "text": "LCD L33822 - Coverage Limitations and Exclusions\n\nNon-adjunctive CGMs replace standard home BGMs and related supplies; claims for a BGM and related supplies billed in addition to a non-adjunctive CGM (E2103) and supply allowance (A4239) will be denied.\n\nRelated Tags: hcpcs:E2103, hcpcs:A4239, device:non-adjunctive-CGM, conflict:duplicate-billing",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "block_id": "L33822_limitations_3",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "lcd_L33822_limitations_4",
+    "text": "LCD L33822 - Coverage Limitations and Exclusions\n\nClaims for CGM systems billed as E2102 or E2103 must be for devices listed on the PDAC Product Classification List (PCL); otherwise the claim will be denied as incorrect coding.\n\nRelated Tags: hcpcs:E2102, hcpcs:E2103, process:PDAC-review, process:PCL-listed",
+    "metadata": {
+      "source": "LCD L33822",
+      "policy_id": "L33822",
+      "section": "limitations",
+      "type": "lcd_policy",
+      "block_id": "L33822_limitations_4",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_4",
+    "text": "Denial Code: CO-4\nDescription: Procedure code inconsistent with modifier or required modifier missing\n\nCommon Causes for CGM/DME Claims:\nMissing KX modifier. CGM claims require KX to certify medical necessity documentation is on file.\n\nResolution Steps:\nAdd KX modifier. Verify medical necessity documentation meets LCD L33822 criteria. Rebill with corrected modifier.\n\nAppeal Strategy:\nSubmit copy of medical records showing diabetes diagnosis, insulin treatment, and prescriber attestation of medical necessity.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-4",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_16",
+    "text": "Denial Code: CO-16\nDescription: Claim/service lacks information needed for adjudication\n\nCommon Causes for CGM/DME Claims:\nMissing diagnosis code, incomplete patient demographics, missing referring physician NPI, or incomplete order.\n\nResolution Steps:\nReview claim for completeness. Add missing ICD-10 diabetes diagnosis, verify all NPIs, ensure complete Detailed Written Order on file.\n\nAppeal Strategy:\nSubmit corrected claim with all required fields. Include copy of DWO if order completeness was the issue.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-16",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_167",
+    "text": "Denial Code: CO-167\nDescription: Diagnosis not covered / doesn't support medical necessity\n\nCommon Causes for CGM/DME Claims:\nNon-diabetic diagnosis submitted, or ICD-10 code doesn't qualify under LCD L33822 (must be E10.x, E11.x, E13.x, or O24.x).\n\nResolution Steps:\nVerify patient has qualifying diabetes diagnosis. If correct diagnosis exists, rebill with proper ICD-10 code. If patient doesn't have diabetes, CGM is not covered.\n\nAppeal Strategy:\nSubmit medical records documenting diabetes diagnosis. Include A1C results, treatment history, and physician attestation of diabetes mellitus.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-167",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_197",
+    "text": "Denial Code: CO-197\nDescription: Precertification/authorization/notification absent\n\nCommon Causes for CGM/DME Claims:\nPrior authorization was required but not obtained before dispensing CGM equipment or supplies.\n\nResolution Steps:\nObtain prior authorization if still within timely filing. Some MACs allow retroactive authorization within 14 days.\n\nAppeal Strategy:\nRequest retroactive authorization. Submit all medical necessity documentation with appeal showing patient met criteria at time of service.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-197",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_PR_204",
+    "text": "Denial Code: PR-204\nDescription: This service/equipment/drug is not covered under the patient's current benefit plan\n\nCommon Causes for CGM/DME Claims:\nPatient may not have Part B DME coverage, or CGM benefit may be exhausted.\n\nResolution Steps:\nVerify patient's Medicare Part B enrollment and DME benefit status. Check if patient has secondary insurance.\n\nAppeal Strategy:\nVerify eligibility. If patient has coverage, appeal with eligibility documentation. Consider ABN for patient liability.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "PR-204",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_96",
+    "text": "Denial Code: CO-96\nDescription: Non-covered charge(s) / Not medically necessary\n\nCommon Causes for CGM/DME Claims:\nCGM not deemed medically necessary. Patient may not meet LCD L33822 criteria (insulin treatment, training documented, face-to-face visit).\n\nResolution Steps:\nReview LCD L33822 criteria. Ensure documentation supports: diabetes diagnosis, insulin treatment (or problematic hypoglycemia), training, and 6-month visit.\n\nAppeal Strategy:\nSubmit comprehensive documentation package: progress notes showing diabetes and insulin treatment, training records, face-to-face attestation, and letter of medical necessity.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-96",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_27",
+    "text": "Denial Code: CO-27\nDescription: Expenses incurred after coverage terminated\n\nCommon Causes for CGM/DME Claims:\nService date is after patient's Medicare coverage ended or before it began.\n\nResolution Steps:\nVerify patient eligibility on date of service. If coverage was active, provide eligibility documentation.\n\nAppeal Strategy:\nSubmit eligibility verification from CMS or MAC showing active coverage on service date.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-27",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_29",
+    "text": "Denial Code: CO-29\nDescription: Time limit for filing has expired\n\nCommon Causes for CGM/DME Claims:\nClaim submitted after Medicare's 12-month timely filing deadline.\n\nResolution Steps:\nGenerally cannot be appealed. Consider if any exceptions apply (retroactive eligibility, natural disaster, etc.).\n\nAppeal Strategy:\nIf exception applies, document the circumstances that prevented timely filing. Otherwise, write off the claim.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-29",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_50",
+    "text": "Denial Code: CO-50\nDescription: Non-covered service / not a Medicare benefit\n\nCommon Causes for CGM/DME Claims:\nSpecific CGM model not covered, or service billed is not a DME benefit.\n\nResolution Steps:\nVerify CGM device is FDA-approved and listed on PDAC Product Classification List. Check HCPCS coding is correct.\n\nAppeal Strategy:\nSubmit PDAC documentation, FDA clearance letter, and manufacturer specifications showing device meets Medicare criteria.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-50",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "denial_CO_119",
+    "text": "Denial Code: CO-119\nDescription: Benefit maximum for this time period has been reached\n\nCommon Causes for CGM/DME Claims:\nPatient has already received maximum allowable CGM supplies for the billing period.\n\nResolution Steps:\nReview utilization. CGM supplies are typically 1 month supply at a time, 3 months max per delivery. Check for duplicate billing.\n\nAppeal Strategy:\nIf utilization is appropriate, submit documentation justifying medical necessity for higher utilization. May need treating physician attestation.\n\nRelated LCD: L33822 (Glucose Monitors)\nApplies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors",
+    "metadata": {
+      "source": "Denial Code Reference",
+      "denial_code": "CO-119",
+      "type": "denial_reason",
+      "category": "Claims Resolution",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "doc_dwo_requirements",
+    "text": "Detailed Written Order (DWO) Requirements\n\nA Detailed Written Order (DWO) is required for all CGM claims. The DWO must be received by the supplier before submitting a claim.\n\nRequired Elements:\n\u2022 Patient's name, address, and date of birth\n\u2022 Date of the order\n\u2022 Prescriber's name, NPI, and signature\n\u2022 Detailed description of the item (CGM device name, model)\n\u2022 Quantity to be dispensed\n\u2022 Diagnosis code (ICD-10)\n\u2022 Length of need (if not lifetime)\n\nFor CGM specifically:\n\u2022 Must specify the CGM system being ordered\n\u2022 Must include statement of medical necessity\n\u2022 Prescriber must have conducted face-to-face visit within 6 months\n\nCommon DWO Errors:\n\u2022 Missing prescriber signature or date\n\u2022 Using verbal order without written follow-up\n\u2022 Missing quantity or length of need\n\u2022 Incomplete device description",
+    "metadata": {
+      "source": "Documentation Requirements Guide",
+      "title": "Detailed Written Order (DWO) Requirements",
+      "type": "documentation",
+      "category": "Compliance",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "doc_face_to_face",
+    "text": "Face-to-Face Visit Requirements for CGM\n\nMedicare requires a face-to-face encounter for CGM coverage under LCD L33822.\n\nInitial CGM Order:\n\u2022 Treating practitioner must have a face-to-face visit within 6 months PRIOR to the initial CGM order\n\u2022 Visit can be in-person OR Medicare-approved telehealth\n\nContinued Coverage:\n\u2022 Every 6 months thereafter, patient must have face-to-face visit\n\u2022 Visit must evaluate glycemic control and verify CGM adherence\n\u2022 If 6-month visit requirement not met, CGM and supplies will be denied\n\nDocumentation Requirements:\n\u2022 Date of face-to-face encounter\n\u2022 Practitioner's attestation of the visit\n\u2022 Evaluation of diabetes management\n\u2022 Verification of CGM training and proper use\n\u2022 Documentation of continued medical necessity\n\nTelehealth Visits:\n\u2022 Must be Medicare-approved telehealth service\n\u2022 Must meet all telehealth requirements (originating site, etc.)\n\u2022 Documentation must specify telehealth modality used",
+    "metadata": {
+      "source": "Documentation Requirements Guide",
+      "title": "Face-to-Face Visit Requirements for CGM",
+      "type": "documentation",
+      "category": "Compliance",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "doc_medical_necessity",
+    "text": "Medical Necessity Documentation for CGM\n\nTo establish medical necessity for CGM under LCD L33822, documentation must support:\n\n1. Diabetes Diagnosis:\n\u2022 ICD-10 codes: E10.x (Type 1), E11.x (Type 2), E13.x (Other specified), O24.x (Gestational)\n\u2022 Documented in medical records with clinical findings\n\n2. Insulin Treatment OR Problematic Hypoglycemia:\n\u2022 For insulin users: Document type of insulin, frequency, and dosing regimen\n\u2022 For non-insulin CGM: Document history of problematic hypoglycemia requiring intervention\n\n3. Training and Competency:\n\u2022 Patient (or caregiver) received training on the CGM device\n\u2022 Documentation of training date and trainer\n\u2022 Evidence of competency in device use\n\n4. Prescriber Attestation:\n\u2022 Statement that CGM is medically necessary\n\u2022 Certification that all LCD criteria are met\n\u2022 Signature and date\n\n5. FDA Indications:\n\u2022 CGM must be prescribed in accordance with FDA-approved indications\n\u2022 Device must be on PDAC Product Classification List",
+    "metadata": {
+      "source": "Documentation Requirements Guide",
+      "title": "Medical Necessity Documentation for CGM",
+      "type": "documentation",
+      "category": "Compliance",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "doc_refill_requirements",
+    "text": "CGM Refill and Resupply Documentation\n\nMedicare has specific requirements for CGM refills and resupply under LCD L33822.\n\nRefill Contact Requirements:\n\u2022 Supplier must contact beneficiary (or caregiver) before dispensing refills\n\u2022 Contact must occur no sooner than 30 calendar days before expected supply end\n\u2022 Must obtain affirmative refill request from beneficiary\n\nDelivery Timing:\n\u2022 Refills cannot be delivered sooner than 10 calendar days before expected supply end\n\u2022 Cannot deliver more than 90-day supply at one time\n\nDocumentation Required:\n\u2022 Date of refill contact\n\u2022 Method of contact (phone, email, etc.)\n\u2022 Beneficiary's affirmative response\n\u2022 Delivery date\n\u2022 Quantity dispensed\n\nAutomatic Shipment Prohibited:\n\u2022 Cannot use auto-ship without beneficiary's affirmative request each time\n\u2022 Pre-authorized recurring orders do not satisfy requirement\n\nProof of Delivery:\n\u2022 Must maintain POD documentation\n\u2022 POD must be available upon MAC request",
+    "metadata": {
+      "source": "Documentation Requirements Guide",
+      "title": "CGM Refill and Resupply Documentation",
+      "type": "documentation",
+      "category": "Compliance",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "appeal_general_strategy",
+    "text": "General CGM Denial Appeal Strategy\n\nWhen appealing a CGM denial, follow this structured approach:\n\n1. Identify the Denial Reason:\n\u2022 Review the EOB/remittance for specific denial code\n\u2022 Understand exactly what criteria was not met\n\n2. Gather Documentation:\n\u2022 Complete medical records from 6 months prior to order\n\u2022 Detailed Written Order (DWO)\n\u2022 Face-to-face visit documentation\n\u2022 A1C and glucose records\n\u2022 Insulin treatment records\n\u2022 Training documentation\n\n3. Draft Appeal Letter:\n\u2022 Reference specific LCD L33822 criteria\n\u2022 Address each denial reason specifically\n\u2022 Include physician attestation of medical necessity\n\u2022 Cite relevant policy language\n\n4. Submit Appeal:\n\u2022 Level 1: Redetermination (within 120 days)\n\u2022 Level 2: Reconsideration by QIC (within 180 days)\n\u2022 Level 3: ALJ hearing (if amount in controversy met)\n\n5. Follow Up:\n\u2022 Track appeal status\n\u2022 Respond promptly to additional information requests\n\u2022 Document all communications",
+    "metadata": {
+      "source": "Appeal Strategy Guide",
+      "title": "General CGM Denial Appeal Strategy",
+      "type": "appeal_strategy",
+      "category": "Appeals",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  },
+  {
+    "id": "appeal_medical_necessity",
+    "text": "Appealing Medical Necessity Denials (CO-96)\n\nFor medical necessity denials on CGM claims, the appeal must demonstrate all LCD L33822 criteria are met:\n\nRequired Documentation:\n1. Diabetes Diagnosis:\n   \u2022 Lab results (A1C, fasting glucose)\n   \u2022 Clinical notes documenting diabetes\n\n2. Insulin Treatment:\n   \u2022 Prescription records\n   \u2022 Progress notes showing insulin regimen\n   \u2022 Or: documentation of problematic hypoglycemia\n\n3. Face-to-Face Visit:\n   \u2022 Visit note within 6 months of order\n   \u2022 Attestation from prescriber\n\n4. CGM-Specific Training:\n   \u2022 Training record with date\n   \u2022 Prescriber statement of patient competency\n\n5. Letter of Medical Necessity:\n   \u2022 Why CGM is needed for this patient\n   \u2022 How it differs from standard glucose monitoring\n   \u2022 Expected clinical benefits\n\nSample Appeal Language:\n\"Patient [Name] meets all criteria for CGM coverage under LCD L33822. As documented in the attached records, the patient has [Type 1/Type 2] diabetes mellitus, is treated with [insulin regimen], completed CGM training on [date], and had a face-to-face visit on [date] during which the prescribing physician determined CGM is medically necessary for optimal glycemic management.",
+    "metadata": {
+      "source": "Appeal Strategy Guide",
+      "title": "Appealing Medical Necessity Denials (CO-96)",
+      "type": "appeal_strategy",
+      "category": "Appeals",
+      "updated_at": "2026-01-05T13:27:38.263031+00:00",
+      "version": "1.0"
+    }
+  }
+]
