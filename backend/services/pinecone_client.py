@@ -100,3 +100,9 @@ async def delete_namespace(namespace: str):
     """Delete all vectors in a namespace."""
     index = get_index()
     index.delete(delete_all=True, namespace=namespace)
+
+
+async def delete_vectors(ids: list[str], namespace: str = "default"):
+    """Delete specific vectors by ID."""
+    index = get_index()
+    index.delete(ids=ids, namespace=namespace)

@@ -68,8 +68,17 @@ Key files:
 - `GET /api/policies/{policy_id}` - Full policy detail with criteria/codes
 - `GET /api/policies/compare/jurisdictions?codes=...` - Compare coverage across MACs
 - `GET /api/policies/changes/recent` - Track recent policy updates
-- `GET /api/sync/status` - Check sync status and last sync time
-- `POST /api/sync/run` - Trigger vector sync (used by Railway cron)
+
+### Sync Endpoints (with Postgres snapshots)
+- `GET /api/sync/status` - Check sync status, active snapshot, database readiness
+- `POST /api/sync/run` - Trigger vector sync (fetches from Verity, saves snapshot, deploys to Pinecone)
+  - `?force=true` - Bypass safety threshold
+  - `?full=true` - Full re-embed
+- `GET /api/sync/snapshots` - List recent snapshots
+- `GET /api/sync/snapshots/{snapshot_id}` - Get snapshot details
+- `POST /api/sync/rollback/{snapshot_id}` - Rollback to previous snapshot
+- `POST /api/sync/approve/{snapshot_id}` - Approve and deploy paused snapshot
+- `GET /api/sync/history` - Get sync operation history
 
 ## Running Locally
 ```bash
@@ -90,6 +99,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 PINECONE_API_KEY=pcsk_...
 VOYAGE_API_KEY=pa-...
 VERITY_API_KEY=vrt_live_...
+DATABASE_URL=postgresql://...  # Internal Railway Postgres connection
 ```
 
 ### Frontend (Railway)
@@ -100,5 +110,16 @@ VITE_API_URL=https://cgm-dme-assistant-production.up.railway.app
 ## Railway Services
 - **cgm-dme-assistant** - Backend (root: `backend/`)
 - **secure-benevolence** - Frontend (root: `frontend/`)
+- **Postgres** - PostgreSQL database for vector snapshots
 
-Both auto-deploy from GitHub on push to main.
+Backend and frontend auto-deploy from GitHub on push to main.
+
+## Postgres Snapshot System
+The sync system uses PostgreSQL to store vector snapshots for:
+- **Auto-updates**: Fetch from Verity API → compare → save snapshot → embed → upsert
+- **Rollback**: Restore any previous snapshot with one API call
+- **Safety threshold**: Pauses sync if >30% of vectors would change (use `force=true` to bypass)
+
+Tables:
+- `vector_snapshots` - Full snapshot of vector data (chunks as JSONB)
+- `sync_history` - Tracks all sync operations with status and stats

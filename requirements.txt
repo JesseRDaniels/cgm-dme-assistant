@@ -12,6 +12,9 @@ anthropic>=0.18.0
 # Vector Database
 pinecone>=5.0.0
 
+# PostgreSQL
+asyncpg>=0.29.0
+
 # Document Processing
 pypdf>=4.0.0
 beautifulsoup4>=4.12.0

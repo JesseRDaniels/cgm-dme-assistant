@@ -1,17 +1,26 @@
 """CGM DME Assistant - FastAPI Application"""
+import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import chat, batch, generate, codes, audit, prior_auth, policies, sync
 from services.pinecone_client import init_pinecone
+from services.database import init_database, close_database
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Initialize services on startup."""
     await init_pinecone()
+    try:
+        await init_database()
+    except Exception as e:
+        logger.warning(f"Database initialization failed (non-fatal): {e}")
     yield
+    await close_database()
 
 
 app = FastAPI(

@@ -16,6 +16,9 @@ class Settings(BaseSettings):
     pinecone_environment: str = "us-east-1"
     pinecone_index_name: str = "cgm-dme"
 
+    # PostgreSQL
+    database_url: str = ""
+
     # App Settings
     debug: bool = False
     log_level: str = "INFO"
