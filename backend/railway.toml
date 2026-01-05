@@ -7,3 +7,9 @@ healthcheckPath = "/health"
 healthcheckTimeout = 100
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
+
+# Auto-sync vectors daily at 6 AM UTC (1 AM EST)
+[[cron]]
+schedule = "0 6 * * *"
+endpoint = "/api/sync/run"
+timeout = 300
