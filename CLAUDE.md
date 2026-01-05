@@ -68,6 +68,8 @@ Key files:
 - `GET /api/policies/{policy_id}` - Full policy detail with criteria/codes
 - `GET /api/policies/compare/jurisdictions?codes=...` - Compare coverage across MACs
 - `GET /api/policies/changes/recent` - Track recent policy updates
+- `GET /api/sync/status` - Check sync status and last sync time
+- `POST /api/sync/run` - Trigger vector sync (used by Railway cron)
 
 ## Running Locally
 ```bash
