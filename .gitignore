@@ -15,9 +15,13 @@ build/
 # Data (raw docs may be large/sensitive)
 data/raw/
 data/processed/
-data/chunks/
 *.pdf
 *.csv
+
+# Keep chunks and sync state for version control
+!data/chunks/
+!data/chunks/all_chunks.json
+!data/sync_state.json
 
 # IDE
 .idea/

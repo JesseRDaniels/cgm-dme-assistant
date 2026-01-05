@@ -6,6 +6,7 @@ import json
 import os
 import httpx
 from pathlib import Path
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -82,6 +83,8 @@ Billing Requirements:
                 "category": category,
                 "type": "hcpcs_code",
                 "policy_id": "L33822",
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "version": "1.0",
             }
         })
 
@@ -130,6 +133,8 @@ Tags: {', '.join(set(tag for item in items for tag in item.get('tags', [])))}"""
                 "section": section,
                 "type": "lcd_policy",
                 "category": section_title,
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "version": "1.0",
             }
         })
 
@@ -150,6 +155,8 @@ Related Tags: {', '.join(item.get('tags', []))}""",
                         "section": section,
                         "type": "lcd_policy",
                         "block_id": item.get("block_id", ""),
+                        "updated_at": datetime.now(timezone.utc).isoformat(),
+                        "version": "1.0",
                     }
                 })
 
@@ -256,6 +263,8 @@ Applies to: CGM supplies (K0553, A9276-A9278) and blood glucose monitors"""
                 "denial_code": denial["code"],
                 "type": "denial_reason",
                 "category": "Claims Resolution",
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "version": "1.0",
             }
         })
 
@@ -386,6 +395,8 @@ Proof of Delivery:
                 "title": doc["title"],
                 "type": "documentation",
                 "category": "Compliance",
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "version": "1.0",
             }
         })
 
@@ -473,6 +484,8 @@ Sample Appeal Language:
                 "title": appeal["title"],
                 "type": "appeal_strategy",
                 "category": "Appeals",
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "version": "1.0",
             }
         })
 
